@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/listfragment">
+
+    <fragment
+        android:id="@+id/listfragment"
+        android:name="com.example.todo.listfragment"
+        android:label="fragment_listfragment"
+        tools:layout="@layout/fragment_listfragment" >
+        <action
+            android:id="@+id/action_listfragment_to_formFragment"
+            app:destination="@id/formFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/formFragment"
+        android:name="com.example.todo.FormFragment"
+        android:label="fragment_form"
+        tools:layout="@layout/fragment_form" >
+        <action
+            android:id="@+id/action_formFragment_to_listfragment"
+            app:destination="@id/listfragment"
+            app:popUpTo="@id/listfragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
